@@ -7,4 +7,15 @@ const ensureLoggedIn = ensureLogIn();
 
 const router = express.Router();
 
+// Landing page get and logic
+router.get(
+  "/",
+  function (req, res, next) {
+    if (!req.user) {
+      return res.render("home");
+    }
+    next();
+  }
+);
+
 module.exports = router;
