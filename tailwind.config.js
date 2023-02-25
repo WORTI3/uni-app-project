@@ -1,4 +1,7 @@
 module.exports = {
+  plugins: [
+    require('tailwindcss-skip-link')(),
+  ],
   content: [
     "./src/views/*.njk",
     "./src/_layouts/*.njk",
