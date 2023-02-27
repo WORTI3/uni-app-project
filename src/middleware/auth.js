@@ -1,4 +1,4 @@
-const { ERROR_MESSAGES, SUCCESS_MESSAGES } = require('../assets/constants');
+const { ERROR_MESSAGES, SUCCESS_MESSAGES, ASSET_TYPE } = require('../assets/constants');
 const { validationResult } = require('express-validator');
 
 function checkValidationResult(req, res, next) {
@@ -19,10 +19,18 @@ function checkValidationResult(req, res, next) {
     if(req.body.note){
       req.session.note = req.body.note;
     }
+    // update values into db
+    req.session.update = {
+      name: req.body.name,
+      code: req.body.code,
+      type: req.body.type,
+      note: req.body.note,
+    };
     // don't have to clean url here.. original should be fine.
     var url = req.originalUrl;
     if (url.endsWith('/delete')) {
       url = url.replace('delete', 'edit');
+      // return res.render('index', { user: req.user, edit: true });
     }
     return res.redirect(url);
   }

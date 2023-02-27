@@ -53,7 +53,6 @@ app.use(function (req, res, next) {
 });
 
 app.use(function (req, res, next) {
-  console.log(JSON.stringify(req.session));
   if(req.session.username !== null){
     res.locals.username = req.session.username;
     req.session.username = null;

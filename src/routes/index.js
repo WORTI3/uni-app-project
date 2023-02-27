@@ -87,8 +87,6 @@ router.get(
   ensureLoggedIn,
   updateAssetById,
   fetchAssetById,
-  checkEditUpdated,
-  checkEditClosed,
   function (req, res, next) {
     return res.render("index", { user: req.user, edit: true });
   }
@@ -99,20 +97,20 @@ router.get(
   ensureLoggedIn,
   fetchAssetById,
   function (req, res, next) {
-    return res.render("index", { user: req.user });
+    return res.render("index", { user: req.user, readOnly: true });
   }
 );
 
-router.post('/:id(\\d+)/view', ensureLoggedIn, fetchAssetById, function(req, res, next) {
+router.post('/:id(\\d+)/view', ensureLoggedIn, function(req, res, next) {
   res.render('index', { user: req.user, readOnly: true });
 });
 
-router.post('/:id(\\d+)/edit', ensureLoggedIn, fetchAssetById, function(req, res, next) {
-  res.render('index', { user: req.user, edit: true });
-});
-
-// todo: validation on this
+// we could validate type but not needed for v1.0.0
 router.post('/:id(\\d+)/delete', ensureLoggedIn,
+  check('name', ERROR_MESSAGES.ADD_ISSUE.NAME).isLength({ min: 1 }),
+  check('code', ERROR_MESSAGES.ADD_ISSUE.CODE).isLength({ min: 6, max: 6 }),
+  check('note', ERROR_MESSAGES.ADD_ISSUE.NOTE).isLength({ min: 3, max: 200 }),
+  checkValidationResult,
   checkEditUpdate, isAdmin, checkEditAdmin, function(req, res, next) {
   db.run('DELETE FROM assets WHERE id = ? AND owner_id = ?', [
     req.params.id,
@@ -123,6 +121,10 @@ router.post('/:id(\\d+)/delete', ensureLoggedIn,
     req.session.msgTone = "positive";
     return res.redirect('/all');
   });
+});
+
+router.post('/:id(\\d+)/edit', ensureLoggedIn, fetchAssetById, function(req, res, next) {
+  res.render('index', { user: req.user, edit: true });
 });
 
 router.get('/settings', ensureLoggedIn, function(req, res, next) {
