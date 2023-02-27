@@ -35,9 +35,9 @@ db.serialize(function() {
 
 var salt = crypto.randomBytes(16);
 db.run('INSERT OR IGNORE INTO users (username, role, hashed_password, salt) VALUES (?, ?, ?, ?)', [
-  'archie',
+  'admin',
   1,
-  crypto.pbkdf2Sync('letmein', salt, 310000, 32, 'sha256'),
+  crypto.pbkdf2Sync('admin', salt, 310000, 32, 'sha256'),
   salt
 ]);
 
