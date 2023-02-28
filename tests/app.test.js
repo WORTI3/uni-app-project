@@ -1,6 +1,4 @@
-// const request = require("supertest");
 const app = require("../src/app");
-const nunjucks = require("nunjucks");
 
 describe("Nunjucks configuration", () => {
 
