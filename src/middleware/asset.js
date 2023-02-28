@@ -58,8 +58,7 @@ function fetchAssetById(req, res, next) {
           url: "/" + row.id,
         };
       });
-<<<<<<< HEAD
-      console.log("SESSION asset: " + JSON.stringify(req.session.asset));
+
       if (req.session.asset) {
         asset[0].name = req.session.asset.name;
         asset[0].code = req.session.asset.code;
@@ -68,9 +67,6 @@ function fetchAssetById(req, res, next) {
         req.session.asset = undefined;
       }
 
-      console.log(JSON.stringify(asset[0]));
-=======
->>>>>>> 0e4fd9f (chore(tests) added more unit tests)
       res.locals.asset = asset[0];
       next();
     }
