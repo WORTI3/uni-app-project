@@ -2,7 +2,7 @@ const express = require("express");
 const { ASSET_STATUS, ERROR_MESSAGES, SUCCESS_MESSAGES } = require("../assets/constants");
 const ensureLogIn = require("connect-ensure-login").ensureLoggedIn;
 const db = require("../db");
-const { fetchAssets, fetchAssetById, updateAssetById, fetchAssetsForAdmin, trimAssetName } = require("../middleware/asset");
+const { fetchAssets, fetchAssetById, updateAssetById, fetchAssetsForAdmin } = require("../middleware/asset");
 const { isAdmin, checkValidationResult } = require("../middleware/auth");
 const { checkEditUpdate, checkAll, checkAdd, checkEditAdmin, checkEditUpdated, checkEditClosed } = require("../middleware/routing");
 const { check } = require('express-validator');
@@ -54,7 +54,6 @@ router.post(
   ensureLoggedIn, 
   checkAll,
   checkAdd,
-  trimAssetName,
   function(req, res, next) {
     // refactor
   if (req.body.item !== '') {

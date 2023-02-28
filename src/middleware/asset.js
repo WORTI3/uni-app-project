@@ -132,10 +132,4 @@ function fetchAssetsForAdmin(req, res, next) {
   );
 }
 
-// look to remove this
-function trimAssetName(req, res, next) {
-  req.body.item = req.body.item.trim();
-  next();
-};
-
-module.exports = { fetchAssets, fetchAssetById, updateAssetById, fetchAssetsForAdmin, trimAssetName };
+module.exports = { fetchAssets, fetchAssetById, updateAssetById, fetchAssetsForAdmin };
