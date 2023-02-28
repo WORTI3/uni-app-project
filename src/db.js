@@ -25,7 +25,7 @@ db.serialize(function() {
     created DATE NOT NULL, \
     updated DATE NOT NULL, \
     name TEXT NOT NULL, \
-    code TEXT NOT NULL, \
+    code VARCHAR(6) NOT NULL, \
     type TEXT NOT NULL, \
     status TEXT NOT NULL, \
     note TEXT, \
