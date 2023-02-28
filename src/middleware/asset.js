@@ -58,6 +58,7 @@ function fetchAssetById(req, res, next) {
           url: "/" + row.id,
         };
       });
+<<<<<<< HEAD
       console.log("SESSION asset: " + JSON.stringify(req.session.asset));
       if (req.session.asset) {
         asset[0].name = req.session.asset.name;
@@ -68,6 +69,8 @@ function fetchAssetById(req, res, next) {
       }
 
       console.log(JSON.stringify(asset[0]));
+=======
+>>>>>>> 0e4fd9f (chore(tests) added more unit tests)
       res.locals.asset = asset[0];
       next();
     }
@@ -105,7 +108,6 @@ function fetchAssetsForAdmin(req, res, next) {
       }
 
       var assets = rows.map(function (row) {
-        console.log("row: " + JSON.stringify(row));
         return {
           id: row.id,
           created: DateTime.fromISO(row.created).toFormat("MMMM dd, yyyy"),
@@ -130,8 +132,8 @@ function fetchAssetsForAdmin(req, res, next) {
   );
 }
 
+// look to remove this
 function trimAssetName(req, res, next) {
-  console.log(JSON.stringify(req.body));
   req.body.item = req.body.item.trim();
   next();
 };

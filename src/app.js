@@ -11,6 +11,7 @@ const app = express();
 // db
 const SQLiteStore = require("connect-sqlite3")(session);
 // app routers
+const homeRouter = require("./routes/home");
 const indexRouter = require("./routes/index");
 const authRouter = require("./routes/auth");
 
@@ -57,6 +58,7 @@ app.use(function (req, res, next) {
   next();
 });
 // app routes
+app.use("/", homeRouter);
 app.use("/", indexRouter);
 app.use("/", authRouter);
 
