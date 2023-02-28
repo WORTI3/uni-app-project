@@ -92,23 +92,19 @@ describe("checkValidationResult() unit tests", () => {
     expect(req.session.messages).toEqual([ERROR_MESSAGES.DEFAULT]);
   });
 
-  it("should update session variables for username, item, code, and note", () => {
-    req.body = {
-      username: "testuser",
-      item: "testitem",
-      assetCode: "12345",
+  it('should add asset into session if url ends in /edit', () => {
+    req.originalUrl = "/example/edit";
+    const asset = {
+      name: "testuser",
+      code: "testitem",
+      type: "12345",
       note: "testnote",
     };
-    checkValidationResult(req, res, next);
-    expect(req.session.username).toBe("testuser");
-    expect(req.session.name).toBe("testitem");
-    expect(req.session.code).toBe("12345");
-    expect(req.session.note).toBe("testnote");
-  });
+    req.body = asset;
 
-  it('should replace "/delete" with "/edit" in the URL if it ends with "/delete"', () => {
-    req.originalUrl = "/example/delete";
     checkValidationResult(req, res, next);
+
+    expect(req.session.asset).toEqual(asset);
     expect(res.redirect).toHaveBeenCalledWith("/example/edit");
   });
 });

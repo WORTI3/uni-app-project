@@ -170,6 +170,7 @@ describe("fetchAssetById() unit tests", () => {
   it("should return the asset with the given ID", () => {
     const req = {
       params: { id: 1 },
+      session: { asset: undefined },
     };
     const res = { locals: {} };
     const next = jest.fn();
