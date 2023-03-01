@@ -29,7 +29,7 @@ exports[`GET /add should return 200 status code match snapshot 1`] = `
             </div>
         </a>
         <form action="/logout" method="post">
-            <input type="hidden" name="_csrf" value="xLkjOwlm-dSESf6DRUpcsjhHrqZjUE7zRa9o">
+            <input type="hidden" name="_csrf" value="123456">
             <button class="text-sm font-semibold px-4 py-2 leading-none border rounded text-gray-600 border-gray hover:border-transparent hover:bg-gray-700 hover:text-white" type="submit">Sign out</button>
         </form>
         
@@ -38,7 +38,7 @@ exports[`GET /add should return 200 status code match snapshot 1`] = `
 
         <body class="bg-gradient-to-tr from-picton-blue-400 to-picton-blue-700 overflow-hidden">
             <main>
-    <input type="hidden" name="_csrf" value="xLkjOwlm-dSESf6DRUpcsjhHrqZjUE7zRa9o">
+    <input type="hidden" name="_csrf" value="123456">
     
 	
 	
@@ -60,7 +60,7 @@ exports[`GET /add should return 200 status code match snapshot 1`] = `
         
         
         <form action="/add" method="post" novalidate>
-            <input type="hidden" name="_csrf" value="xLkjOwlm-dSESf6DRUpcsjhHrqZjUE7zRa9o">
+            <input type="hidden" name="_csrf" value="123456">
             <label for="item" class="text-gray-400">Item name</label>
             <input id="item" name="item" type="text" placeholder="e.g Macbook Pro" value="" required class="w-full text-sm px-4 py-3 bg-gray-200 focus:bg-gray-100 border  border-gray-200 rounded-lg focus:outline-none focus:border-picton-blue-500 mb-6">
             
@@ -137,7 +137,7 @@ exports[`GET /settings should return 200 status code match snapshot 1`] = `
             </div>
         </a>
         <form action="/logout" method="post">
-            <input type="hidden" name="_csrf" value="40qyeLaF-3BtEaC0kMgITwH5fQbnAWJ1sZuU">
+            <input type="hidden" name="_csrf" value="123456">
             <button class="text-sm font-semibold px-4 py-2 leading-none border rounded text-gray-600 border-gray hover:border-transparent hover:bg-gray-700 hover:text-white" type="submit">Sign out</button>
         </form>
         
@@ -200,7 +200,7 @@ exports[`GET /settings should return 200 status code match snapshot 1`] = `
           <p>Admin account: <span class="font-semibold">false</span></p>
         </div>
         <form action="javascript:history.back()" method="post">
-            <input type="hidden" name="_csrf" value="40qyeLaF-3BtEaC0kMgITwH5fQbnAWJ1sZuU">
+            <input type="hidden" name="_csrf" value="123456">
             <button type="submit" class="w-full flex justify-center bg-sky-800 hover:bg-sky-600 text-gray-100 p-3  rounded-lg tracking-wide font-semibold  cursor-pointer transition ease-in duration-500">
               Close
             </button>

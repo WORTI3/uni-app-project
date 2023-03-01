@@ -54,6 +54,10 @@ app.use(function (req, res, next) {
 });
 
 app.use(function (req, res, next) {
+  if (process.env.NODE_ENV === "test") {
+    res.locals.csrfToken = "123456";
+    return next();
+  }
   res.locals.csrfToken = req.csrfToken();
   next();
 });
