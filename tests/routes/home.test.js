@@ -1,9 +1,7 @@
 const request = require('supertest');
 const cheerio = require('cheerio');
-const nunjucks = require('nunjucks');
 
 const app = require('../../src/app');
-const loggedInUser = request.agent(app);
 
 const url = '/';
 
