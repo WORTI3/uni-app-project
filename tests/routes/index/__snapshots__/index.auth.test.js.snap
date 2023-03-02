@@ -1,5 +1,237 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`GET /1/edit should return 200 status code match snapshot 1`] = `
+"<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Dashboard • wortie</title>
+		<link rel="stylesheet" type="text/css" href="/main.css">
+	</head>
+
+    <div class="flex flex-col h-screen justify-between overflow-hidden">
+        <nav class="flex items-center justify-between flex-wrap bg-gray-100 p-6">
+    <div class="flex items-center flex-shrink-0 text-picton-blue-600 mr-6">
+        <span class="font-bold text-xl tracking-tight font-sans">WORTIE</span>
+    </div>
+    <div class="block lg:hidden">
+        
+    </div>
+    <div class="flex items-center w-auto">
+        
+        <a href="/settings">
+            <div class="flex w-full items-center font-sans px-4">
+                <img class="w-8 h-8 rounded-full" src="https://source.puri.sm/uploads/-/system/user/avatar/10/avatar.png" alt="user avatar">
+                <div class="flex-1 px-2">
+                    <p class="text-gray-600 text-sm md:text-base font-semibold"></p>
+                </div>
+            </div>
+        </a>
+        <form action="/logout" method="post">
+            <input type="hidden" name="_csrf" value="123456">
+            <button class="text-sm font-semibold px-4 py-2 leading-none border rounded text-gray-600 border-gray hover:border-transparent hover:bg-gray-700 hover:text-white" type="submit">Sign out</button>
+        </form>
+        
+    </div>
+</nav>
+
+        <body class="bg-gradient-to-tr from-picton-blue-400 to-picton-blue-700 overflow-hidden">
+            <main>
+    <input type="hidden" name="_csrf" value="123456">
+    
+	
+	
+	
+	
+    <div class="px-12 py-8 bg-white mx-auto rounded-3xl max-w-3xl mt-6">
+        <a href="/all" class="float-left text-sm font-bold text-sky-600 hover:text-sky-600">Go back</a><br>
+        <p class="float-right">
+            <span class="inline-flex items-center bg-rose-800 rounded-full px-2 text-sm text-white py-1 font-medium">
+                <svg xmlns="http://www.w3.org/2000/svg" class="fill-current mr-1.5 text-white" viewBox="0 0 16 16" width="16" height="16">
+                <path d="M8 9.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path>
+                <path fill-rule="evenodd" d="M8 0a8 8 0 100 16A8 8 0 008 0zM1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0z"></path>
+                </svg>
+                
+            </span>
+        </p>
+        <div class="mb-5 text-gray-400">
+            <h3 class="font-semibold text-2xl text-gray-800">Editing asset: #1</h3>
+            <p>Last modified: </p>
+        </div>
+
+        
+        
+        <form action="/edit" method="post" novalidate>
+            <label for="item" class="text-gray-400">Item name</label>
+            <input id="item" name="name" type="text" placeholder="test asset" value="test asset" required class="w-full text-sm px-4 py-3 bg-gray-200 focus:bg-gray-100 border  border-gray-200 rounded-lg focus:outline-none focus:border-sky-600 mb-6">
+            <div class="grid grid-cols-2 gap-6 mb-6">
+                <div class="flex flex-col">
+                    <label for="asset-code" class="text-gray-400 mb-1">Item asset code</label>
+                    <input id="asset-code" name="code" type="text" placeholder="" value="" required class="text-sm px-4 py-3 bg-gray-200 focus:bg-gray-100 border  border-gray-200 rounded-lg focus:outline-none focus:border-sky-600">
+                </div>
+                <div class="flex flex-col">
+                    <label for="asset-type" class="text-gray-400 mb-1">Type</label>
+                    <select id="asset-type" name="type" type="text" placeholder="" value="" required class="text-sm px-4 py-3 bg-gray-200 focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-sky-600">
+                        <option>Hardware fault</option>
+                        <option>Software fault</option>
+                        <option>Other</option>
+                        
+                    </select>
+                </div>
+            </div>
+
+            <label for="note" class="text-gray-400 block">Note</label>
+            <input id="note" name="note" type="text" placeholder="" value="" required class="w-full text-sm px-4 py-3 bg-gray-200 focus:bg-gray-100 border  border-gray-200 rounded-lg focus:outline-none focus:border-picton-blue-500 mb-6">
+
+            <label for="created" class="text-gray-400 mb-1">Logged</label>
+            <div id="created" class="w-full text-sm px-4 py-3 bg-gray-200 focus:bg-gray-100 border  border-gray-200 rounded-lg focus:outline-none focus:border-sky-600 mb-6"></div>
+
+            <input type="hidden" name="_csrf" value="123456">
+
+            <div class="flex justify-start">
+                <button type="submit" name="update" value="update" class="w-40 mr-6 bg-sky-800 hover:bg-sky-600 text-gray-100 p-3 rounded-lg tracking-wide font-semibold  cursor-pointer transition ease-in duration-500">
+                    Update
+                </button>
+                 
+            </div>
+        </form>
+    </div>
+
+
+
+	
+	
+
+	
+	
+
+</main>
+        </body>
+
+        <footer class="lg:text-left bg-gray-100 text-gray-600">
+            <div class="text-center p-6">
+                <span>© 2023 </span>
+                <a class="text-gray-600 font-semibold" href="https://github.com/WORTI3">Wortie</a>
+            </div>
+        </footer>
+    </div>
+</html>"
+`;
+
+exports[`GET /1/view should return 200 status code match snapshot 1`] = `
+"<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Dashboard • wortie</title>
+		<link rel="stylesheet" type="text/css" href="/main.css">
+	</head>
+
+    <div class="flex flex-col h-screen justify-between overflow-hidden">
+        <nav class="flex items-center justify-between flex-wrap bg-gray-100 p-6">
+    <div class="flex items-center flex-shrink-0 text-picton-blue-600 mr-6">
+        <span class="font-bold text-xl tracking-tight font-sans">WORTIE</span>
+    </div>
+    <div class="block lg:hidden">
+        
+    </div>
+    <div class="flex items-center w-auto">
+        
+        <a href="/settings">
+            <div class="flex w-full items-center font-sans px-4">
+                <img class="w-8 h-8 rounded-full" src="https://source.puri.sm/uploads/-/system/user/avatar/10/avatar.png" alt="user avatar">
+                <div class="flex-1 px-2">
+                    <p class="text-gray-600 text-sm md:text-base font-semibold"></p>
+                </div>
+            </div>
+        </a>
+        <form action="/logout" method="post">
+            <input type="hidden" name="_csrf" value="123456">
+            <button class="text-sm font-semibold px-4 py-2 leading-none border rounded text-gray-600 border-gray hover:border-transparent hover:bg-gray-700 hover:text-white" type="submit">Sign out</button>
+        </form>
+        
+    </div>
+</nav>
+
+        <body class="bg-gradient-to-tr from-picton-blue-400 to-picton-blue-700 overflow-hidden">
+            <main>
+    <input type="hidden" name="_csrf" value="123456">
+    
+	
+	
+	
+	
+
+
+    <div class="px-12 py-8 bg-white mx-auto rounded-3xl max-w-3xl mt-6">
+        <a href="/all" class="float-left text-sm font-bold text-sky-600 hover:text-sky-600">Go back</a><br>
+        <p class="float-right">
+            <span class="inline-flex items-center bg-rose-800 rounded-full px-2 text-sm text-white py-1 font-medium">
+                <svg xmlns="http://www.w3.org/2000/svg" class="fill-current mr-1.5 text-white" viewBox="0 0 16 16" width="16" height="16">
+                <path d="M8 9.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path>
+                <path fill-rule="evenodd" d="M8 0a8 8 0 100 16A8 8 0 008 0zM1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0z"></path>
+                </svg>
+                
+            </span>
+        </p>
+        <div class="mb-5 text-gray-400">
+            <h3 class="font-semibold text-2xl text-gray-800">Viewing asset: #1</h3>
+            <p>Last modified: </p>
+            <p>Raised by:  on </p>
+        </div>
+
+        
+        
+        <form action="/delete" method="post">
+            <label for="item" class="text-gray-400">Item name</label>
+            <div id="item" class="w-full text-sm px-4 py-3 bg-gray-200 focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-sky-600 mb-6">test asset</div>
+            <div class="grid grid-cols-2 gap-6 mb-6">
+                <div class="flex flex-col">
+                    <label for="asset-code" class="text-gray-400 mb-1">Item asset code</label>
+                    <div id="asset-code" class="text-sm px-4 py-3 bg-gray-200 focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-sky-600"></div>
+                </div>
+                <div class="flex flex-col">
+                    <label for="asset-type" class="text-gray-400 mb-1">Type</label>
+                    <div id="asset-type" class="text-sm px-4 py-3 bg-gray-200 focus:bg-gray-100 border  border-gray-200 rounded-lg focus:outline-none focus:border-sky-600"></div>
+                </div>
+            </div>
+
+            <label for="note" class="text-gray-400 block">Note</label>
+            <div id="note" class="text-sm px-4 py-3 bg-gray-200 focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-sky-600 mb-6"></div>
+
+            <input type="hidden" name="_csrf" value="123456">
+
+            <div class="flex justify-start">
+                
+                
+                <button type="submit" name="update" value="delete" class="w-40 bg-rose-800 hover:bg-rose-600 text-gray-100 p-3 rounded-lg tracking-wide font-semibold  cursor-pointer transition ease-in duration-500">
+                    Delete
+                </button>
+            </div>
+        </form>
+    </div>
+
+	
+	
+
+	
+	
+
+</main>
+        </body>
+
+        <footer class="lg:text-left bg-gray-100 text-gray-600">
+            <div class="text-center p-6">
+                <span>© 2023 </span>
+                <a class="text-gray-600 font-semibold" href="https://github.com/WORTI3">Wortie</a>
+            </div>
+        </footer>
+    </div>
+</html>"
+`;
+
 exports[`GET /add should return 200 status code match snapshot 1`] = `
 "<!DOCTYPE html>
 <html lang="en">
