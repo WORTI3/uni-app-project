@@ -19,6 +19,60 @@ beforeEach(() => {
   jest.clearAllMocks();
 });
 
+describe('GET /all/closed', () => {
+  it('should return 200 status, match snapshot and load content correctly', async () => {
+    const assets = [
+      { id: 1, name: 'Asset 1' },
+      { id: 2, name: 'Asset 2' },
+      { id: 3, name: 'Asset 3', closed: 1 }
+    ];
+    const user = { id: 1, name: 'John Doe' };
+
+    ensureLoggedIn.mockImplementation((req, res, next) => next());
+    fetchAssetsForAdmin.mockImplementation((req, res, next) => next());
+    fetchAssets.mockImplementation((req, res, next) => {
+      res.locals.assets = assets;
+      res.locals.closedCount = 1;
+      next();
+    });
+
+    const result = await request(app).get('/all/closed').expect(200);
+    expect(result.get('Content-Type')).toContain('text/html');
+    expect(result.text).toMatchSnapshot();
+    const $ = cheerio.load(result.text);
+    const heading = $('h3').text();
+    expect(heading).toBe('Closed Tickets (1)');
+    expect($('a').length).toBe(3);
+  });
+});
+
+describe('GET /all', () => {
+  it('should return 200 status, match snapshot and load content correctly', async () => {
+    const assets = [
+      { id: 1, name: 'Asset 1' },
+      { id: 2, name: 'Asset 2' },
+      { id: 3, name: 'Asset 3', closed: 1 }
+    ];
+    const user = { id: 1, name: 'John Doe' };
+
+    ensureLoggedIn.mockImplementation((req, res, next) => next());
+    fetchAssetsForAdmin.mockImplementation((req, res, next) => next());
+    fetchAssets.mockImplementation((req, res, next) => {
+      res.locals.assets = assets;
+      res.locals.openCount = 2;
+      next();
+    });
+
+    const result = await request(app).get('/all').expect(200);
+    expect(result.get('Content-Type')).toContain('text/html');
+    expect(result.text).toMatchSnapshot();
+    const $ = cheerio.load(result.text);
+    const heading = $('h3').text();
+    expect(heading).toBe('Your open tickets (2)');
+    expect($('a').length).toBe(3);
+  });
+});
+
 describe("GET /add", () => {
   it("should return 200 status code match snapshot", async () => {
     const result = await request(app).get("/add").expect(200);
