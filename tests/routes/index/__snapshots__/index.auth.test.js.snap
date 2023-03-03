@@ -90,7 +90,7 @@ exports[`GET /1/edit should return 200 status code match snapshot 1`] = `
             <input type="hidden" name="_csrf" value="123456">
 
             <div class="flex justify-start">
-                <button type="submit" name="update" value="update" class="w-40 mr-6 bg-sky-800 hover:bg-sky-600 text-gray-100 p-3 rounded-lg tracking-wide font-semibold  cursor-pointer transition ease-in duration-500">
+                <button type="submit" name="update" value="update" class="w-40 mr-6 bg-picton-blue-500 hover:bg-picton-blue-700 text-gray-100 p-3 rounded-lg tracking-wide font-semibold  cursor-pointer transition ease-in duration-500">
                     Update
                 </button>
                  
@@ -415,7 +415,7 @@ exports[`GET /all should return 200 status, match snapshot and load content corr
                     <td>
                         <form action="/edit" method="get">
                             <input type="hidden" name="_csrf" value="123456">
-                            <button type="submit" name="edit" value="true" class="w-full h-1/2 p-1 flex justify-center bg-sky-800  hover:bg-sky-600 text-gray-100 rounded-lg tracking-wide font-semibold  cursor-pointer transition ease-in duration-500">
+                            <button type="submit" name="edit" value="true" class="w-full h-1/2 p-1 flex justify-center bg-picton-blue-500 hover:bg-picton-blue-700 text-gray-100 rounded-lg tracking-wide font-semibold  cursor-pointer transition ease-in duration-500">
                                 Edit
                             </button>
                         </form>
@@ -430,7 +430,7 @@ exports[`GET /all should return 200 status, match snapshot and load content corr
                     <td>
                         <form action="/edit" method="get">
                             <input type="hidden" name="_csrf" value="123456">
-                            <button type="submit" name="edit" value="true" class="w-full h-1/2 p-1 flex justify-center bg-sky-800  hover:bg-sky-600 text-gray-100 rounded-lg tracking-wide font-semibold  cursor-pointer transition ease-in duration-500">
+                            <button type="submit" name="edit" value="true" class="w-full h-1/2 p-1 flex justify-center bg-picton-blue-500 hover:bg-picton-blue-700 text-gray-100 rounded-lg tracking-wide font-semibold  cursor-pointer transition ease-in duration-500">
                                 Edit
                             </button>
                         </form>
@@ -535,7 +535,7 @@ exports[`GET /all/closed should return 200 status, match snapshot and load conte
                     <td>
                         <form action="/view" method="get">
                             <input type="hidden" name="_csrf" value="123456">
-                            <button type="submit" name="view" value="true" class="w-full h-1/2 p-1 flex justify-center bg-sky-800  hover:bg-sky-600 text-gray-100 rounded-lg tracking-wide font-semibold  cursor-pointer transition ease-in duration-500">
+                            <button type="submit" name="view" value="true" class="w-full h-1/2 p-1 flex justify-center bg-picton-blue-500 hover:bg-picton-blue-700 text-gray-100 rounded-lg tracking-wide font-semibold  cursor-pointer transition ease-in duration-500">
                                 View
                             </button>
                         </form>
@@ -656,7 +656,7 @@ exports[`GET /settings should return 200 status code match snapshot 1`] = `
         </div>
         <form action="javascript:history.back()" method="post">
             <input type="hidden" name="_csrf" value="123456">
-            <button type="submit" class="w-full flex justify-center bg-sky-800 hover:bg-sky-600 text-gray-100 p-3  rounded-lg tracking-wide font-semibold  cursor-pointer transition ease-in duration-500">
+            <button type="submit" class="w-full flex justify-center bg-picton-blue-500 hover:bg-picton-blue-700 text-gray-100 p-3  rounded-lg tracking-wide font-semibold  cursor-pointer transition ease-in duration-500">
               Close
             </button>
         </form>
