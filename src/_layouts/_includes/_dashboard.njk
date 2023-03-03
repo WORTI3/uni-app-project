@@ -7,25 +7,25 @@
 		
 		{% include "./_messages.njk" %}
 
-		<h2 class="text-gray-400 mb-2">What would you like to do?</h2>
+		<h2 class="text-gray-500 mb-2">What would you like to do?</h2>
 		<div class="flex justify-start">
 			<form action="/" method="post">
 				{% include "./_csrf.njk" %}
-				<button type="submit" name="all" value="all" class="w-40 mr-4 bg-picton-blue-500 hover:bg-picton-blue-700 text-gray-100 p-3 rounded-lg tracking-wide font-semibold  cursor-pointer transition ease-in duration-500">
+				<button type="submit" name="all" value="all" class="w-40 mr-4 bg-picton-blue-800 hover:bg-picton-blue-700 text-gray-100 p-3 rounded-lg tracking-wide font-semibold  cursor-pointer transition ease-in duration-500">
 					View all
 				</button>
 			</form>
 			{% if user.role === 1 %}
 				<form action="/" method="post">
 					{% include "./_csrf.njk" %}
-					<button type="submit" name="all" value="closed" class="w-40 mr-4 bg-picton-blue-500 hover:bg-picton-blue-700 text-gray-100 p-3 rounded-lg tracking-wide font-semibold  cursor-pointer transition ease-in duration-500">
+					<button type="submit" name="all" value="closed" class="w-40 mr-4 bg-picton-blue-800 hover:bg-picton-blue-700 text-gray-100 p-3 rounded-lg tracking-wide font-semibold  cursor-pointer transition ease-in duration-500">
 						View closed
 					</button>
 				</form>
 			{% endif %}
 			<form action="/" method="post">
 				{% include "./_csrf.njk" %}
-				<button type="submit" name="add" value="add" class="w-40 bg-picton-blue-500 hover:bg-picton-blue-700 text-gray-100 p-3 rounded-lg tracking-wide font-semibold  cursor-pointer transition ease-in duration-500">
+				<button type="submit" name="add" value="add" class="w-40 bg-picton-blue-800 hover:bg-picton-blue-700 text-gray-100 p-3 rounded-lg tracking-wide font-semibold  cursor-pointer transition ease-in duration-500">
 					Add new
 				</button>
 			</form>
