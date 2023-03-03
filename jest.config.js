@@ -3,7 +3,10 @@ const config = {
   verbose: true,
   coverageThreshold: {
     global: {
-      lines: 70
+      branches: 50,
+      functions: 55,
+      lines: 70,
+      statements: 70
     },
   },
 };
